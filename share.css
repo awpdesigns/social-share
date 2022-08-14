@@ -1,0 +1,180 @@
+/* Font Google - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+*, html {
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #DAE6FC;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 8px 0;
+    text-align: center;
+}
+.place-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 20px;
+}
+/* Alert Copied */
+.alert-copied {
+    background-color: rgba(0, 238, 135, 0.384);
+    border: 1px solid #05d474;
+    border-radius: 8px;
+    padding: 16px 24px;
+    text-align: center;
+    width: fit-content;
+    position: fixed;
+    top: 20px;
+    right: 50%;
+    transform: translateX(50%);
+}
+/* Backdrop & Close button */
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    opacity: .5;
+}
+button.close:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #F00000;
+}
+button.close {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: unset;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: #DFDFDF;
+    color: #878787;
+}
+/* Social Share */
+.share-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    width: 100%;
+    max-width: fit-content;
+    background-color: #FFFFFF;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 110, 255, 0.2);
+}
+.share-title {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+.share-title::after {
+    content: ' this page';
+}
+#social-share a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 4px;
+    background-color: #DAE6FC;
+    transition: transform 0.3s ease;
+}
+#social-share a:hover {
+    background-color: #4781F1;
+    transform: scale(1.1);
+}
+#social-share a i {
+    font-size: 16px;
+    color: #4781F1;
+}
+#social-share a:hover i {
+    color: #FFFFFF;
+}
+/* Media Queries */
+@media only screen and (max-width: 576px) {
+    .alert-copied {
+        width: 80%;
+    }
+    .share-wrap {
+        position: relative;
+    }
+    .share-title {
+        background-color: #4781F1;
+        color: #FFFFFF;
+        padding: 4px 8px;
+        font-weight: 500;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .share-title::after {
+        content: ' This Page';
+    }
+    .share-title::before {
+        content: "\ec03";
+        font-family: 'boxicons';
+        margin: 0 4px 0 0;
+    }
+    .share-title.active ~ #social-share {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+    #social-share {
+        position: relative;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: max-content;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 16px 28px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 110, 255, 0.2);
+        background-color: #FFFFFF;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+    #social-share a {
+        width: 100%;
+        padding: 0 8px;
+        color: #4781F1;
+    }
+    #social-share a::after {
+        content: attr(aria-label);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4px;
+    }
+    #social-share a:hover::after {
+        color: #FFFFFF;
+    }
+    #social-share a i {
+        font-size: 16px;
+        color: #4781F1;
+    }
+}
